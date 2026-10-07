@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Фрукты и овощи | ИП Игнатенко Анна Александровна</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f6f2;
+    color: #272727;
+    line-height: 1.6;
+}
+
+header {
+    background: #fff;
+    border-bottom: 1px solid #e7e4dc;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav {
+    max-width: 1180px;
+    margin: auto;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 700;
+    color: #315c43;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #315c43;
+}
+
+.hero {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 85px 20px 70px;
+}
+
+.hero-box {
+    background: #e6efe6;
+    border-radius: 28px;
+    padding: 65px;
+}
+
+.hero h1 {
+    max-width: 700px;
+    font-size: 52px;
+    line-height: 1.08;
+    color: #284d38;
+    margin-bottom: 22px;
+}
+
+.hero p {
+    max-width: 650px;
+    font-size: 18px;
+    color: #566057;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    background: #315c43;
+    color: white;
+    text-decoration: none;
+    padding: 14px 25px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.button:hover {
+    background: #244733;
+}
+
+.container {
+    max-width: 1180px;
+    margin: auto;
+    padding: 55px 20px;
+}
+
+.section-title {
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    color: #284d38;
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: #777;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.about-card {
+    background: white;
+    border: 1px solid #e5e2da;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.about-card h3 {
+    color: #315c43;
+    margin-bottom: 12px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.product {
+    background: white;
+    border: 1px solid #e5e2da;
+    border-radius: 18px;
+    padding: 25px;
+    transition: .2s;
+}
+
+.product:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.07);
+}
+
+.product-number {
+    font-size: 13px;
+    color: #8a948c;
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    font-size: 21px;
+    color: #284d38;
+    margin-bottom: 8px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #315c43;
+    margin: 12px 0;
+}
+
+.product p {
+    color: #666;
+    font-size: 14px;
+}
+
+.details {
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 13px;
+    color: #555;
+}
+
+.details strong {
+    color: #333;
+}
+
+.product .button {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.info-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 30px;
+    border: 1px solid #e5e2da;
+}
+
+.info-card h3 {
+    color: #315c43;
+    margin-bottom: 12px;
+}
+
+.contact {
+    background: #315c43;
+    color: white;
+    border-radius: 28px;
+    padding: 50px;
+}
+
+.contact h2 {
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+
+.contact p {
+    margin: 8px 0;
+    color: #e4eee7;
+}
+
+.contact a {
+    color: white;
+}
+
+footer {
+    margin-top: 60px;
+    background: #222b25;
+    color: #bfc8c1;
+    padding: 35px 20px;
+}
+
+.footer-inner {
+    max-width: 1180px;
+    margin: auto;
+}
+
+footer strong {
+    color: white;
+}
+
+@media (max-width: 850px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-box {
+        padding: 40px 25px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    nav {
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 35px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .contact {
+        padding: 35px 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">Свежий выбор</div>
+
+        <nav>
+            <a href="#about">О компании</a>
+            <a href="#catalog">Каталог</a>
+            <a href="#delivery">Доставка</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </div>
+</header>
+
+
+<section class="hero">
+    <div class="hero-box">
+        <h1>Фрукты и овощи на каждый день</h1>
+
+        <p>
+            Свежие продукты для дома, семьи и повседневных покупок.
+            Подбираем качественные фрукты и овощи и предлагаем удобный способ заказа.
+        </p>
+
+        <a class="button" href="#catalog">Посмотреть каталог</a>
+    </div>
+</section>
+
+
+<section class="container" id="about">
+
+    <div class="section-title">
+        <h2>О магазине</h2>
+        <p>Простые продукты, понятные цены и удобный заказ.</p>
+    </div>
+
+    <div class="about">
+
+        <div class="about-card">
+            <h3>Свежие продукты</h3>
+            <p>
+                В ассортименте представлены популярные фрукты и овощи
+                для ежедневного употребления.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h3>Удобный заказ</h3>
+            <p>
+                Выберите необходимый товар из каталога и свяжитесь с нами
+                для уточнения количества и оформления заказа.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="container" id="catalog">
+
+    <div class="section-title">
+        <h2>Каталог</h2>
+        <p>Основные позиции ассортимента</p>
+    </div>
+
+    <div class="products">
+
+
+        <div class="product">
+            <div class="product-number">01</div>
+            <h3>Яблоки</h3>
+            <div class="price">189 ₽ / кг</div>
+            <p>Свежие хрустящие яблоки для ежедневного употребления.</p>
+
+            <div class="details">
+                <strong>Характеристики:</strong> свежие, отборные<br>
+                <strong>Комплектация:</strong> товар на развес<br>
+                <strong>Гарантийные условия:</strong> проверка качества при получении
+            </div>
+
+            <a class="button" href="tel:+79524141945">Заказать</a>
+        </div>
+
+
+        <div class="product">
+            <div class="product-number">02</div>
+            <h3>Бананы</h3>
+            <div class="price">149 ₽ / кг</div>
+            <p>Сладкие бананы для перекуса и приготовления блюд.</p>
+
+            <div class="details">
+                <strong>Характеристики:</strong> свежие, спелые<br>
+                <strong>Комплектация:</strong> товар на развес<br>
+                <strong>Гарантийные условия:</strong> проверка качества при получении
+            </div>
+
+            <a class="button" href="tel:+79524141945">Заказать</a>
+        </div>
+
+
+        <div class="product">
+            <div class="product-number">03</div>
+            <h3>Апельсины</h3>
+            <div class="price">219 ₽ / кг</div>
+            <p>Сочные цитрусовые с насыщенным вкусом.</p>
+
+            <div class="details">
+                <strong>Характеристики:</strong> свежие, сочные<br>
+                <strong>Комплектация:</strong> товар на развес<br>
+                <strong>Гарантийные условия:</strong> проверка качества при получении
+            </div>
+
+            <a class="button" href="tel:+79524141945">Заказать</a>
+        </div>
+
+
+        <div class="product">
+            <div class="product-number">04</div>
+            <h3>Мандарины</h3>
+            <div class="price">249 ₽ / кг</div>
+            <p>Ароматные мандарины для всей семьи.</p>
+
+            <div class="details">
+                <strong>Характеристики:</strong> свежие, ароматные<br>
+                <strong>Комплектация:</strong> товар на развес<br>
+                <strong>Гарантийные условия:</strong> проверка качества при получении
+            </div>
+
+            <a class="button" href="tel:+79524141945">Заказать</a>
+        </div>
+
+
+        <div class="product">
+            <div class="product-number">05</div>
+            <h3>Груши</h3>
+            <div class="price">229 ₽ / кг</div>
+            <p>Сочные ароматные груши для свежего употребления.</p>
+
+            <div class="details">
+                <strong>Характеристики:</strong> свежие, отборные<br>
+                <strong>Комплектация:</strong> товар на развес<br>
+                <strong>Гарантийные условия:</strong> проверка качества при получении
+            </div>
+
+            <a class="button" href="tel:+79524141945">Заказать</a>
+        </div>
+
+
+        <div class="product">
+            <div class="product-number">06</div>
+            <h3>Томаты</h3>
+            <div class="price">259 ₽ / кг</div>
+            <p>Свежие томаты для салатов и домашних блюд.</p>
+
+            <div class="details">
+                <strong>Характеристики:</strong> свежие, зрелые<br>
+                <strong>Комплектация:</strong> товар на развес<br>
+                <strong>Гарантийные условия:</strong> проверка качества при получении
+            </div>
+
+            <a class="button" href="tel:+79524141945">Заказать</a>
+        </div>
+
+
+        <div class="product">
+            <div class="product-number">07</div>
+            <h3>Огурцы</h3>
+            <div class="price">239 ₽ / кг</div>
+            <p>Хрустящие свежие огурцы для салатов и закусок.</p>
+
+            <div class="details">
+                <strong>Характеристики:</strong> свежие, хрустящие<br>
+                <strong>Комплектация:</strong> товар на развес<br>
+                <strong>Гарантийные условия:</strong> проверка качества при получении
+            </div>
+
+            <a class="button" href="tel:+79524141945">Заказать</a>
+        </div>
+
+
+        <div class="product">
+            <div class="product-number">08</div>
+            <h3>Картофель</h3>
+            <div class="price">89 ₽ / кг</div>
+            <p>Универсальный продукт для домашних блюд.</p>
+
+            <div class="details">
+                <strong>Характеристики:</strong> свежий, отборный<br>
+                <strong>Комплектация:</strong> товар на развес<br>
+                <strong>Гарантийные условия:</strong> проверка качества при получении
+            </div>
+
+            <a class="button" href="tel:+79524141945">Заказать</a>
+        </div>
+
+
+        <div class="product">
+            <div class="product-number">09</div>
+            <h3>Морковь</h3>
+            <div class="price">99 ₽ / кг</div>
+            <p>Свежая морковь для салатов, супов и гарниров.</p>
+
+            <div class="details">
+                <strong>Характеристики:</strong> свежая, отборная<br>
+                <strong>Комплектация:</strong> товар на развес<br>
+                <strong>Гарантийные условия:</strong> проверка качества при получении
+            </div>
+
+            <a class="button" href="tel:+79524141945">Заказать</a>
+        </div>
+
+
+        <div class="product">
+            <div class="product-number">10</div>
+            <h3>Болгарский перец</h3>
+            <div class="price">329 ₽ / кг</div>
+            <p>Яркий сладкий перец для свежих и горячих блюд.</p>
+
+            <div class="details">
+                <strong>Характеристики:</strong> свежий, сочный<br>
+                <strong>Комплектация:</strong> товар на развес<br>
+                <strong>Гарантийные условия:</strong> проверка качества при получении
+            </div>
+
+            <a class="button" href="tel:+79524141945">Заказать</a>
+        </div>
+
+
+        <div class="product">
+            <div class="product-number">11</div>
+            <h3>Виноград</h3>
+            <div class="price">349 ₽ / кг</div>
+            <p>Сладкий свежий виноград для перекуса и десертов.</p>
+
+            <div class="details">
+                <strong>Характеристики:</strong> свежий, сладкий<br>
+                <strong>Комплектация:</strong> товар на развес<br>
+                <strong>Гарантийные условия:</strong> проверка качества при получении
+            </div>
+
+            <a class="button" href="tel:+79524141945">Заказать</a>
+        </div>
+
+
+        <div class="product">
+            <div class="product-number">12</div>
+            <h3>Лимоны</h3>
+            <div class="price">289 ₽ / кг</div>
+            <p>Ароматные лимоны для напитков и приготовления блюд.</p>
+
+            <div class="details">
+                <strong>Характеристики:</strong> свежие, ароматные<br>
+                <strong>Комплектация:</strong> товар на развес<br>
+                <strong>Гарантийные условия:</strong> проверка качества при получении
+            </div>
+
+            <a class="button" href="tel:+79524141945">Заказать</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="container" id="delivery">
+
+    <div class="section-title">
+        <h2>Доставка и оплата</h2>
+        <p>Условия оформления заказа</p>
+    </div>
+
+    <div class="info-grid">
+
+        <div class="info-card">
+            <h3>Заказ</h3>
+            <p>
+                Для оформления заказа свяжитесь с нами по телефону.
+                Количество и наличие товара уточняются перед оформлением.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>Оплата</h3>
+            <p>
+                Способ оплаты и окончательная стоимость заказа
+                согласовываются при оформлении.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>Получение</h3>
+            <p>
+                Условия получения и доставки согласовываются
+                индивидуально при заказе.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="container">
+
+    <div class="section-title">
+        <h2>Возврат и качество</h2>
+    </div>
+
+    <div class="about">
+
+        <div class="about-card">
+            <h3>Возврат</h3>
+            <p>
+                Вопросы возврата или замены товара рассматриваются
+                индивидуально с учётом его вида, состояния и требований
+                законодательства Российской Федерации.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h3>Гарантийные условия</h3>
+            <p>
+                При получении покупатель может проверить соответствие
+                товара заказу и его качество. При выявлении недостатков
+                необходимо связаться с продавцом.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="container">
+
+    <div class="about">
+
+        <div class="about-card">
+            <h3>Политика конфиденциальности</h3>
+            <p>
+                Персональные данные покупателей используются исключительно
+                для обработки обращений, оформления заказов и связи
+                с покупателем.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h3>Пользовательское соглашение</h3>
+            <p>
+                Информация на сайте носит справочный характер.
+                Перед оформлением заказа необходимо уточнить наличие,
+                стоимость и условия приобретения товара.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="container" id="contacts">
+
+    <div class="contact">
+
+        <h2>Контакты</h2>
+
+        <p><strong>ИП Игнатенко Анна Александровна</strong></p>
+        <p>ОГРНИП: 326619600219261</p>
+        <p>ИНН: 615147376036</p>
+        <p>г. Ростов-на-Дону, ул. Извилистая, 15</p>
+        <p>Режим работы: с 10:00 до 18:00</p>
+        <p>
+            Телефон:
+            <a href="tel:+79524141945">+7 (952) 414-19-45</a>
+        </p>
+
+        <br>
+
+        <a class="button" href="tel:+79524141945">
+            Позвонить для заказа
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="footer-inner">
+
+        <p>
+            <strong>ИП Игнатенко Анна Александровна</strong>
+        </p>
+
+        <p>ОГРНИП: 326619600219261</p>
+        <p>ИНН: 615147376036</p>
+        <p>Ростов-на-Дону, ул. Извилистая, 15</p>
+        <p>Телефон: +7 (952) 414-19-45</p>
+        <p>С 10:00 до 18:00</p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
